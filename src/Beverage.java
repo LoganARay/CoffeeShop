@@ -67,10 +67,6 @@ public abstract class Beverage {
             return self();
         }
 
-        public T setShots(int shots) {
-            this.shots = shots;
-            return self();
-        }
 
         public T setSweetener(String sweetener) {
             this.sweetener = sweetener;
