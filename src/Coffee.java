@@ -5,7 +5,11 @@ public class Coffee extends Beverage {
 
     @Override
     public void prepare() {
-        System.out.println("Brewing a fresh " + size + " " + temperature + " " + type + "...");
+        if(temperature==null){ //default temperature is Hot
+            System.out.println("Brewing a fresh " + size + " Hot " + type + "...");
+        }else{
+            System.out.println("Brewing a fresh " + size + " " + temperature + " " + type + "...");
+        }
         if (!milk.equals("None")) {
             System.out.println("Adding a splash of " + milk + ".");
         }

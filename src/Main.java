@@ -1,7 +1,3 @@
-/**
- * CoffeeShop.java - The Main Entry Point.
- * This class demonstrates the Factory, Builder, and Order Type requirements.
- */
 public class Main {
     public static void main(String[] args) {
 
@@ -13,6 +9,7 @@ public class Main {
                 .setSize("Large")
                 .setMilk("Oat")
                 .setShots(3)
+                .setTemp("Cold")
                 .build();
 
         // Wrap it in an Order and process it
@@ -21,11 +18,12 @@ public class Main {
 
 
         // 2. Create a "Dine-In" Tea (Customized)
-        Beverage.BeverageBuilder<?> teaBuilder = BeverageFactory.getBeverage("Tea");
+        Tea.Builder teaBuilder = (Tea.Builder) BeverageFactory.getBeverage("Tea");
 
         Beverage myTea = teaBuilder
                 .setSize("Small")
                 .setSweetener("Honey")
+                .setTemp("Hot")
                 .build();
 
         Order order2 = new Order(myTea, "Dine-In");
@@ -43,5 +41,18 @@ public class Main {
 
         Order order3 = new Order(myCap, "Delivery");
         order3.processOrder();
+
+
+        Coffee.Builder cofBuilder = (Coffee.Builder) BeverageFactory.getBeverage("Coffee");
+
+        Beverage myCof = cofBuilder
+                .setSize("Medium")
+                .setShots(2) // Valid for espresso drinks!
+                .setMilk("Almond")
+                .setTemp("Cold")
+                .build();
+
+        Order order4 = new Order(myCof, "Delivery");
+        order4.processOrder();
     }
 }

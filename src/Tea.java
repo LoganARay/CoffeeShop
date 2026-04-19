@@ -7,7 +7,11 @@ public class Tea extends Beverage {
 
     @Override
     public void prepare() {
-        System.out.println("Steeping " + size + " " + temperature + " " + type + "...");
+        if(temperature==null){ //default temperature is Hot
+            System.out.println("Steeping " + size + " Hot " + type + "...");
+        }else{
+            System.out.println("Steeping " + size + " " + temperature + " " + type + "...");
+        }
         if (!sweetener.equals("None")) {
             System.out.println(" -> Stirring in " + sweetener + ".");
         }

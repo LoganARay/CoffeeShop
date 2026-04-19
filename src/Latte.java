@@ -11,7 +11,12 @@ public class Latte extends Beverage {
      */
     @Override
     public void prepare() {
-        System.out.println("Steaming " + milk + " milk and pulling " + shots + " espresso shots...");
+        if(temperature=="Cold"){
+            System.out.println("Pouring cold " + milk + " milk and pulling " + shots + " espresso shots...");
+        }
+        else{ //If you dont specify what temperature you want your Latte, then it will by default be Hot
+            System.out.println("Steaming " + milk + " milk and pulling " + shots + " espresso shots...");
+        }
         System.out.println("Your " + size + " " + type + " is ready!");
     }
 

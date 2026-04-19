@@ -1,13 +1,11 @@
-
 public class BeverageFactory {
 
     /**
-     * Factory method to get a beverage builder.
-     */
+
+     Factory method to get a beverage builder.*/
     public static Beverage.BeverageBuilder<?> getBeverage(String type) {
         if (type == null) {
-            return null;
-        }
+            return null;}
 
         // Using a switch statement to decide which concrete Builder to return
         switch (type.toLowerCase()) {
