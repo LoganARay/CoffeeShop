@@ -33,6 +33,15 @@ public class Latte extends Beverage {
             return this;
         }
 
+        public Latte.Builder setTemp(String temperature) {
+            if (temperature=="Hot" || temperature=="Cold"){
+                this.temperature = temperature;
+            } else {
+                System.out.println("Not a temperature option!");
+            }
+            return this;
+        }
+
         // Returns this specific builder instance to keep method chaining active.
         @Override
         protected Builder self() {

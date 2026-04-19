@@ -19,6 +19,15 @@ public class Tea extends Beverage {
             super("Tea");
         }
 
+        public Tea.Builder setTemp(String temperature) {
+            if (temperature=="Hot" || temperature=="Cold"){
+                this.temperature = temperature;
+            } else {
+                System.out.println("Not a temperature option!");
+            }
+            return this;
+        }
+
         @Override
         protected Builder self() { return this; }
 

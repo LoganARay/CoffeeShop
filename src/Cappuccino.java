@@ -26,7 +26,7 @@ public class Cappuccino extends Beverage {
             if (shots >= 1 && shots <= 3) {
                 this.shots = shots;
             } else {
-                System.out.println("Note: Shots must be between 1 and 3.");
+                System.out.println("Note: BaseDrinkComponents.Shots must be between 1 and 3.");
             }
             return this;
         }

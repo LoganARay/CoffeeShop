@@ -52,11 +52,6 @@ public abstract class Beverage {
             this.type = type;
         }
 
-        public T setTemperature(String temperature) {
-            this.temperature = temperature;
-            return self();
-        }
-
         public T setSize(String size) {
             this.size = size;
             return self();
@@ -66,7 +61,6 @@ public abstract class Beverage {
             this.milk = milk;
             return self();
         }
-
 
         public T setSweetener(String sweetener) {
             this.sweetener = sweetener;

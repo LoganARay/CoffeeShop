@@ -16,6 +16,24 @@ public class Coffee extends Beverage {
             super("Coffee");
         }
 
+        public Coffee.Builder setShots(int shots) {
+            if (shots >= 1 && shots <= 3) {
+                this.shots = shots;
+            } else {
+                System.out.println("Invalid shot count. Must be 1, 2, or 3.");
+            }
+            return this;
+        }
+
+        public Coffee.Builder setTemp(String temperature) {
+            if (temperature=="Hot" || temperature=="Cold"){
+                this.temperature = temperature;
+            } else {
+                System.out.println("Not a temperature option!");
+            }
+            return this;
+        }
+
         @Override
         protected Builder self() {
             return this;
